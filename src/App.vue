@@ -9,7 +9,10 @@
       </div>
     <!-- Må fikse på layout her, plasser i midten -->
       <div>
-        <Buttons @clear-input="clearDisplay" class="buttons"/>
+        <Buttons 
+        @clear-input="clearDisplay"
+        @target-value="displayValue" 
+        class="buttons"/>
       </div>
   </div>
   <Log/>
@@ -33,6 +36,10 @@ export default {
   methods: {
     clearDisplay() {
       this.input = '' // husk denne!!
+    },
+    displayValue(value) {
+      
+      this.input = value;
     }
   },
   data() {
