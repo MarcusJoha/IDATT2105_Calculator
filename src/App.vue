@@ -5,15 +5,14 @@
   <div>
     <div class="container">
       <div class="display">
-        <Display></Display>
+        <Display/>
       </div>
     <!-- Må fikse på layout her, plasser i midten -->
-      <div class="buttons">
-        <Buttons></Buttons>
+      <div>
+        <Buttons class="buttons"/>
       </div>
   </div>
-
-  <Log></Log>
+  <Log/>
   </div>
 
   
@@ -51,6 +50,11 @@ export default {
   border: 1px solid black;
   overflow: auto;
   border-radius: 5px;
+  background-color: lightblue;
+  
+}
+
+.container > div {
   
 }
 
@@ -59,5 +63,10 @@ export default {
 .buttons {
   border: none;
   background-color: #123456;
+  position: none;
+  display: inline-block;
+  align-content: center;
+  
+
 }
 </style>

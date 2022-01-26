@@ -24,14 +24,15 @@
 </template>
 
 <script>
-// her jeg kobler alle metodene til knappene
 
-
+    export default {
+        name: 'Buttons',
+    }
 
 
 </script>
 
-<style>
+<style scoped>
     button {
         text-align: center;
         width: 100px;
@@ -39,9 +40,11 @@
     }
 
     .grid {
-        height: 30px;
+
+        height: auto;
         display: grid;
         gap: 16px;
+        padding: 10px;
 
         grid-template-areas: 
         'C ANS DEL plus'
