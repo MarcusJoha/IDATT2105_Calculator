@@ -1,6 +1,6 @@
 <template>
     <section class="grid">
-        <button>C</button>
+        <button @click="clearInput()">C</button>
         <button>ANS</button>
         <button>DEL</button>
         <button>+</button>
@@ -27,7 +27,26 @@
 
     export default {
         name: 'Buttons',
+
+        components: {
+
+        },
+
+        methods: {
+            clearInput() {
+                this.$emit('clear-input')
+            }
+        },
+
+        props: {
+
+        },
+        computed: {
+
+        }
+
     }
+    
 
 
 </script>
@@ -57,6 +76,10 @@
 
     section {
         
+    }
+
+    button {
+        font-size: 30px;
     }
 
     section > button:nth-child(1) {

@@ -5,11 +5,11 @@
   <div>
     <div class="container">
       <div class="display">
-        <Display/>
+        <input type="text" id="calculator-input" v-model="input">
       </div>
     <!-- Må fikse på layout her, plasser i midten -->
       <div>
-        <Buttons class="buttons"/>
+        <Buttons @clear-input="clearDisplay" class="buttons"/>
       </div>
   </div>
   <Log/>
@@ -19,18 +19,29 @@
 </template>
 
 <script>
-import Display from './components/Display.vue'
+
 import Buttons from './components/Buttons.vue'
 import Log from './components/Log.vue'
 
 export default {
   name: 'App',
   components: {
-    Display,
     Buttons,
     Log,
+  },
+
+  methods: {
+    clearDisplay() {
+      this.input = '' // husk denne!!
+    }
+  },
+  data() {
+    return {
+      input: ''
+    }
   }
 }
+
 </script>
 
 <style>
@@ -58,15 +69,25 @@ export default {
   
 }
 
-
-
 .buttons {
   border: none;
   background-color: #123456;
   position: none;
   display: inline-block;
-  align-content: center;
-  
+  align-content: center; 
 
 }
+
+#calculator-input {
+        min-width: 300px;
+        max-width: 400px;
+        min-height: 50px;
+        border: 1px black solid;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        background-color: lightgray;
+
+        font-size: 35px;
+}
+
 </style>

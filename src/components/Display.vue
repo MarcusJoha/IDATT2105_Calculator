@@ -1,10 +1,28 @@
 <template>
-    <input type="text" id="calculator-input">    
+    
+    <input @clear-input="clearDisplay" type="text" id="calculator-input" v-model="input">   
+
+    <button v-bind:onClick="clearDisplay">clear</button> 
 </template>
 
 <script>
+
     export default {
         name: 'Display',
+        components: {
+
+        },
+        data() {
+            return {
+                input: ''
+            }
+        },
+
+        methods: {
+            clearDisplay() {
+                this.input = '';
+            }
+        }
     }
 
 </script>
