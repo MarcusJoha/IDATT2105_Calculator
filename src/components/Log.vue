@@ -9,7 +9,6 @@
         </ul>
     </div>
 </template>
-
 <script>
 
 export default {
@@ -17,7 +16,6 @@ export default {
     props: {
         equations: Array
     }
-    
 }
 
 </script>

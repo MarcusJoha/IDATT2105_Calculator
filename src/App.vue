@@ -5,7 +5,7 @@
   <div>
     <div class="container">
       <div class="display">
-        <input type="text" id="calculator-input" v-model="input">
+        <input type="text" id="calculator-input" v-model="input" disabled>
       </div>
     <!-- Må fikse på layout her, plasser i midten -->
       <div>
@@ -42,7 +42,15 @@ export default {
     equals() {
       // burde ikke bruke eval
       // burde finne en annen måte
-      let answer = eval(this.input)
+      let answer = '';
+      try {
+        answer = eval(this.input)
+      } catch(e) {
+          if (e instanceof SyntaxError) {
+            alert("Wrong input")
+            this.input = ''
+          }
+      }
       let equation = this.input;
       this.input = answer
       // this.equations = [...this.equations, answer] // spread operator
