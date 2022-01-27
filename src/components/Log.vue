@@ -15,9 +15,8 @@ export default {
     name: 'Log',
     props: {
         equations: Array
-    }
+    },
 }
-
 </script>
 
 

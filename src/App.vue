@@ -49,12 +49,13 @@ export default {
           if (e instanceof SyntaxError) {
             alert("Wrong input")
             this.input = ''
+            return // Stop execution of function
           }
       }
       let equation = this.input;
       this.input = answer
-      // this.equations = [...this.equations, answer] // spread operator
-      this.equations.push(equation + "=" + answer)
+      this.equations = [...this.equations, equation + " = " + answer] // spread operator
+      // this.equations.push(equation + "=" + answer)
     },
     deleteStuff() {
       // vet ikke om dette her er bare spagetti
@@ -71,11 +72,6 @@ export default {
       equations: [],
     }
   },
-
-  computed: {
-    
-  },
-
 }
 
 </script>
@@ -125,5 +121,6 @@ export default {
 
         font-size: 35px;
 }
+
 
 </style>
