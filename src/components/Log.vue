@@ -1,6 +1,10 @@
 <template>
     <div class="log">
         <h2>Log</h2>
+        <p>Equations</p>
+        <ul>
+            <li></li>
+        </ul>
     </div>
 </template>
 
@@ -8,6 +12,10 @@
 
 export default {
     name: 'Log',
+    props: {
+        equations: Array
+    }
+    
 }
 
 </script>

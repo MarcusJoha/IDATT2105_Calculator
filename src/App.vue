@@ -12,6 +12,8 @@
         <Buttons 
         @clear-input="clearDisplay"
         @target-value="displayValue" 
+        @equation-equals="equals"
+        @delete-stuff="deleteStuff"
         class="buttons"/>
       </div>
   </div>
@@ -38,15 +40,31 @@ export default {
       this.input = '' // husk denne!!
     },
     displayValue(value) {
-      
-      this.input = value;
+      this.input += value;
+    },
+    equals() {
+      // burde ikke bruke eval
+      // burde finne en annen måte
+      let answer = eval(this.input)
+      this.input = answer
+    },
+    deleteStuff() {
+      // vet ikke om dette her er bare spagetti
+      let text = this.input;
+      let result = text.slice(0, text.length-1)
+      this.input = result
     }
   },
   data() {
     return {
       input: ''
     }
-  }
+  },
+
+  computed: {
+    
+  },
+
 }
 
 </script>

@@ -2,8 +2,8 @@
     <section class="grid" @click="getValue">
         <button @click="clearInput()">C</button>
         <button>ANS</button>
-        <button>DEL</button>
-        <button>+</button>
+        <button @click="deleteStuff()">DEL</button>
+        <button v-text="'+'" value="+"></button>
         <button v-text="1" value=1></button>
         <button v-text="2" value=2></button>
         <button v-text="3" value="3"></button>
@@ -11,7 +11,7 @@
         <button v-text="4" value="4"></button>
         <button v-text="5" value="5"></button>
         <button v-text="6" value="6"></button>
-        <button v-text="'*'" value="*"></button>
+        <button v-text="'x'" value="x"></button>
         <button v-text="7" value="7"></button>
         <button v-text="8" value="8"></button>
         <button v-text="9" value="9"></button>
@@ -19,7 +19,7 @@
         <button></button>
         <button v-text="0" value="0"></button>
         <button v-text="'.'" value="."></button>
-        <button id="equal-sign" v-text="'='" value="="></button>
+        <button @click="equals()" id="equal-sign" v-text="'='" value=""></button>
     </section>
 </template>
 
@@ -35,14 +35,13 @@
             getValue(button) {
                 this.$emit('target-value', button.target.value) // sender value til App.vue
             },
+            equals() {
+                this.$emit('equation-equals')
+            },
+            deleteStuff() {
+                this.$emit('delete-stuff')
+            }
         },
-        data() {
-            
-        },
-        computed: {
-
-        }
-
     }
     
 
