@@ -19,10 +19,7 @@
   </div>
   <Log :equations="equations"/>
   </div>
-
-  
 </template>
-
 <script>
 
 import Buttons from './components/Buttons.vue'
@@ -46,10 +43,10 @@ export default {
       // burde ikke bruke eval
       // burde finne en annen måte
       let answer = eval(this.input)
+      let equation = this.input;
       this.input = answer
-
       // this.equations = [...this.equations, answer] // spread operator
-      this.equations.push(answer)
+      this.equations.push(equation + "=" + answer)
     },
     deleteStuff() {
       // vet ikke om dette her er bare spagetti
