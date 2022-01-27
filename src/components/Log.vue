@@ -1,9 +1,11 @@
 <template>
     <div class="log">
         <h2>Log</h2>
-        <p>Equations</p>
         <ul>
-            <li></li>
+            <li v-for="(equation,index) in equations" :key="index">
+                {{ equation }}
+            </li>
+        
         </ul>
     </div>
 </template>

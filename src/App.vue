@@ -17,7 +17,7 @@
         class="buttons"/>
       </div>
   </div>
-  <Log/>
+  <Log :equations="equations"/>
   </div>
 
   
@@ -47,17 +47,23 @@ export default {
       // burde finne en annen måte
       let answer = eval(this.input)
       this.input = answer
+
+      // this.equations = [...this.equations, answer] // spread operator
+      this.equations.push(answer)
     },
     deleteStuff() {
       // vet ikke om dette her er bare spagetti
       let text = this.input;
       let result = text.slice(0, text.length-1)
+
       this.input = result
+      
     }
   },
   data() {
     return {
-      input: ''
+      input: '',
+      equations: [],
     }
   },
 

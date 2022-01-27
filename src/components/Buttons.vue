@@ -11,7 +11,7 @@
         <button v-text="4" value="4"></button>
         <button v-text="5" value="5"></button>
         <button v-text="6" value="6"></button>
-        <button v-text="'x'" value="x"></button>
+        <button v-text="'x'" value="*"></button>
         <button v-text="7" value="7"></button>
         <button v-text="8" value="8"></button>
         <button v-text="9" value="9"></button>
