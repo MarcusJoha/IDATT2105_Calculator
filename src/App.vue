@@ -121,6 +121,4 @@ export default {
 
         font-size: 35px;
 }
-
-
 </style>

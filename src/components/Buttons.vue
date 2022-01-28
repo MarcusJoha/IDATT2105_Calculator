@@ -59,7 +59,7 @@
 
         height: auto;
         display: grid;
-        gap: 16px;
+        grid-gap: 16px;
         padding: 10px;
 
         grid-template-areas: 
